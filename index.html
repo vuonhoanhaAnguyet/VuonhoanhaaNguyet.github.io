@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vườn Hoa Nhà A Nguyệt 🌿</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-deep: #1d2a1f;
+      --moss-card: rgba(28, 43, 31, 0.82);
+      --gold-primary: #d6c29a;
+      --gold-light: #eed9b3;
+      --gold-dim: #9e8e6f;
+      --text-main: #f0ebe1;
+      --text-sub: #b2bba8;
+      --tag-bg: rgba(214, 194, 154, 0.12);
+      --border-soft: rgba(214, 194, 154, 0.28);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Lora', serif;
+      background: radial-gradient(circle at 50% 20%, #314a38 0%, #203124 55%, #131f16 100%);
+      color: var(--text-main);
+      min-height: 100vh;
+      line-height: 1.7;
+    }
+
+    /* Header */
+    header {
+      text-align: center;
+      padding: 55px 20px 30px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .welcome-text {
+      font-size: 0.85rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold-dim);
+      margin-bottom: 6px;
+    }
+
+    h1 {
+      font-family: 'Cinzel', serif;
+      font-size: 2rem;
+      color: var(--gold-light);
+      letter-spacing: 1.5px;
+      margin-bottom: 12px;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Ảnh hoa xanh */
+    .flower-banner {
+      margin: 14px auto 18px;
+      display: flex;
+      justify-content: center;
+    }
+    .hero-flower {
+      width: 130px;
+      height: 130px;
+      object-fit: contain;
+      filter: drop-shadow(0 6px 15px rgba(0, 0, 0, 0.35));
+    }
+
+    .quote {
+      font-size: 0.95rem;
+      font-style: italic;
+      color: var(--text-sub);
+      max-width: 520px;
+      margin: 0 auto 20px;
+    }
+
+    .btn-group {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn-action {
+      display: inline-block;
+      padding: 7px 20px;
+      border: 1px solid var(--gold-primary);
+      color: var(--gold-light);
+      text-decoration: none;
+      border-radius: 25px;
+      font-size: 0.85rem;
+      background: rgba(214, 194, 154, 0.08);
+      transition: all 0.3s ease;
+    }
+
+    .btn-action:hover {
+      background: var(--gold-primary);
+      color: var(--bg-deep);
+    }
+
+    /* Bộ lọc */
+    .filter-container {
+      text-align: center;
+      margin: 20px 0 30px;
+      padding: 0 15px;
+    }
+
+    .filter-btn {
+      background: transparent;
+      border: 1px solid var(--border-soft);
+      color: var(--text-sub);
+      padding: 6px 14px;
+      margin: 4px;
+      border-radius: 20px;
+      font-size: 0.82rem;
+      cursor: pointer;
+      font-family: 'Lora', serif;
+    }
+
+    .filter-btn.active {
+      background: var(--gold-primary);
+      color: var(--bg-deep);
+      border-color: var(--gold-primary);
+      font-weight: 600;
+    }
+
+    /* Thẻ nhân vật */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+      max-width: 950px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+
+    .card {
+      background: var(--moss-card);
+      border-radius: 14px;
+      border: 1px solid var(--border-soft);
+      padding: 20px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 10px;
+    }
+
+    .tag {
+      background: var(--tag-bg);
+      color: var(--gold-light);
+      border: 1px solid rgba(214, 194, 154, 0.2);
+      font-size: 0.72rem;
+      padding: 2px 8px;
+      border-radius: 6px;
+    }
+
+    .card h3 {
+      font-family: 'Cinzel', serif;
+      font-size: 1.2rem;
+      color: var(--gold-light);
+      margin-bottom: 8px;
+    }
+
+    .card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 14px;
+      padding-top: 10px;
+      border-top: 1px dashed rgba(214, 194, 154, 0.2);
+    }
+
+    .lore-btn {
+      background: none;
+      border: none;
+      color: var(--gold-primary);
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-family: 'Lora', serif;
+      text-decoration: underline;
+    }
+
+    .bot-link {
+      font-size: 0.82rem;
+      color: var(--text-sub);
+      text-decoration: none;
+    }
+
+    .lore-content {
+      font-size: 0.86rem;
+      color: var(--text-main);
+      background: rgba(15, 25, 17, 0.7);
+      border-left: 2px solid var(--gold-primary);
+      padding: 10px 12px;
+      border-radius: 4px;
+      margin-top: 10px;
+      display: none;
+    }
+
+    .lore-content.show { display: block; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <p class="welcome-text">Trà quán • Ngâm hoa</p>
+    <h1>Vườn Hoa Nhà A Nguyệt</h1>
+
+    <!-- Ảnh hoa -->
+    <div class="flower-banner">
+      <img src="hoa.png" alt="Bông hoa xanh A Nguyệt" class="hero-flower">
+    </div>
+
+    <p class="quote">"Nơi vừa có những bông hoa sắc sảo, vừa có những bông hoa mềm mại."</p>
+    
+    <div class="btn-group">
+      <a class="btn-action" href="#garden">Dạo cảnh vườn 🌿</a>
+      <a class="btn-action" href="https://facebook.com" target="_blank">Ghé Facebook</a>
+    </div>
+  </header>
+
+  <div class="filter-container">
+    <button class="filter-btn active" onclick="filterCards('all')">Tất cả hoa</button>
+    <button class="filter-btn" onclick="filterCards('sac-sao')">Hoa sắc sảo</button>
+    <button class="filter-btn" onclick="filterCards('mem-mai')">Hoa mềm mại</button>
+  </div>
+
+  <main class="grid" id="garden">
+    <!-- Card 1 -->
+    <article class="card" data-category="sac-sao">
+      <div class="tags">
+        <span class="tag">Cổ đại</span>
+        <span class="tag">Quyền mưu</span>
+      </div>
+      <h3>Tạ Huyền Cẩn</h3>
+      <p style="font-size: 0.84rem; color: var(--text-sub);">Đế vương lạnh lùng, thâm cung ngập tràn cạm bẫy.</p>
+      
+      <div class="card-footer">
+        <button class="lore-btn" onclick="toggleLore(this)">Đọc tóm tắt ✦</button>
+        <a class="bot-link" href="#" target="_blank">Trò chuyện →</a>
+      </div>
+
+      <div class="lore-content">
+        <p>Đại Chiêu năm Vĩnh Chính thứ bảy, thiên hạ ngoài mặt thái bình nhưng hậu cung dậy sóng...</p>
+      </div>
+    </article>
+
+    <!-- Card 2 -->
+    <article class="card" data-category="mem-mai">
+      <div class="tags">
+        <span class="tag">Hiện đại</span>
+        <span class="tag">Gương vỡ lại lành</span>
+      </div>
+      <h3>Hoàng Vĩ Đăng Khoa</h3>
+      <p style="font-size: 0.84rem; color: var(--text-sub);">Thiếu gia ngạo kiều đóng giả shipper tiếp cận người cũ.</p>
+      
+      <div class="card-footer">
+        <button class="lore-btn" onclick="toggleLore(this)">Đọc tóm tắt ✦</button>
+        <a class="bot-link" href="#" target="_blank">Trò chuyện →</a>
+      </div>
+
+      <div class="lore-content">
+        <p>Khoa lén lút lập tài khoản ảo đóng giả làm shop bán pate mèo tự làm chỉ để được nàng nhắn tin lại...</p>
+      </div>
+    </article>
+  </main>
+
+  <script>
+    function toggleLore(btn) {
+      const content = btn.parentElement.nextElementSibling;
+      const isShowing = content.classList.toggle('show');
+      btn.innerText = isShowing ? 'Thu gọn ▴' : 'Đọc tóm tắt ✦';
+    }
+
+    function filterCards(cat) {
+      const cards = document.querySelectorAll('.card');
+      const buttons = document.querySelectorAll('.filter-btn');
+
+      buttons.forEach(b => b.classList.remove('active'));
+      event.target.classList.add('active');
+
+      cards.forEach(card => {
+        if (cat === 'all' || card.getAttribute('data-category') === cat) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>
